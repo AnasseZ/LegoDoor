@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import Model.Controller;
 import Model.StateDoor;
 import lejos.hardware.lcd.LCD;
@@ -10,7 +12,7 @@ import lejos.utility.Delay;
  */
 public class EntryPoint {
  
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		LCD.drawString("DomoDoor.", 0, 4);
 		Delay.msDelay(1000);
@@ -24,7 +26,6 @@ public class EntryPoint {
 		
 		while(running) {
 			action = bc.getData();
-			action = 0; // recupérer depuis la télécommande android
 			switch (action) {
 			case 1:
 				controller.open();
