@@ -83,10 +83,13 @@ public class Controller {
 			setCurrentState(StateDoor.PAUSED);
 		}
 
-    // Tant que pas de collision on continue de fermer la porte
+		// Tant que pas de collision on continue de fermer la porte
 		if(tryingToClose()) {
 			closeDoors();
-      actionFinished = false;
+			actionFinished = false;
+			while(!actionFinished) {
+				
+		    }
 			setCurrentState(StateDoor.CLOSED);
 		}
 
@@ -163,8 +166,8 @@ public class Controller {
 
 	public void closeDoors() {
 		rightMotor.realMotor.startSynchronization();
-		rightMotor.forward();
-		leftMotor.forward();
+		rightMotor.backward();
+		leftMotor.backward();
 		rightMotor.realMotor.endSynchronization();
 	}
 

@@ -18,7 +18,7 @@ public class Motor {
 	}
 	
 	public void backward() {
-		
+		realMotor.backward();
 	}
 	
 	public void stop() {
